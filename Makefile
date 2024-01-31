@@ -12,3 +12,8 @@ lint:
 
 lint-fix:
 	npx eslint . --fix
+
+brain-even:
+	node bin/brain-even.js
+calc:
+	node bin/calc2.js
