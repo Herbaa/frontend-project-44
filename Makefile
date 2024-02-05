@@ -19,3 +19,5 @@ calc:
 	node bin/brain-calc.js
 gcd:
 	node bin/brain-gcd.js
+progression:
+	node bin/brain-progression.js
