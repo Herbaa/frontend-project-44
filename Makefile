@@ -12,12 +12,12 @@ lint:
 
 lint-fix:
 	npx eslint . --fix
-
-brain-even:
+	
+even:
 	node bin/brain-even.js
 calc:
 	node bin/brain-calc.js
 gcd:
 	node bin/brain-gcd.js
-progression:
+prog:
 	node bin/brain-progression.js

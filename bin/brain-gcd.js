@@ -1,45 +1,26 @@
 #!/usr/bin/env node
-import greeting from '../src/cli.js';
-import readlineSync from 'readline-sync';
+import gameBody from '../src/gameBody.js';
+import randomNum from '../src/randomNum.js';
 
-const userName = greeting();
 
-function randomNum(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
-  };
+const description = 'Find the greatest common divisor of given numbers.';
 
-console.log('Find the greatest common divisor of given numbers.');
+const task = () => {
+  const num1 = randomNum(1, 50);
+  const num2 = randomNum(1, 50);
 
-let corr = 0;
-
-while(corr < 3) {
-    let ranNum1 = randomNum(1, 100);
-    let ranNum2 = randomNum(1, 100); 
-
-    const getGCD = (ranNum1, ranNum2) => {
-        if (!ranNum2) {
-          return ranNum1;
-        } else {   
-          return getGCD(ranNum2, ranNum1 % ranNum2)
+  let a = num1;
+  let b = num2;
+  while(a !== 0 && b !== 0) {
+    if (a >= b) {
+      a -= b;
+    } else {
+      b -= a;
     }
-      }
+  }
+  const answer = `${a + b}`;
 
-let correctAns = getGCD(ranNum1, ranNum2);
-
-console.log(`Question: ${ranNum1} ${ranNum2}`);
-const answer = readlineSync.question('Your answer: ');
-
-
-     if (correctAns === Number(answer)) {
-        corr += 1;
-        console.log('Correct');
-      } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAns}'.`);
-        console.log(`Let's try again, ${userName}!`)
-        break;
-      }
-    
-    if (corr === 3) {
-    console.log(`Congratulations, ${userName}!`); 
-    }  
+  return [`${num1} ${num2}`, answer]
 };
+
+gameBody(description, task);
