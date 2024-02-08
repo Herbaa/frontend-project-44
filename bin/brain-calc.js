@@ -4,16 +4,15 @@ import randomNum from '../src/randomNum.js';
 
 const description = 'What is the result of the expression?';
 const task = () => {
-  const operand1 = randomNum(1, 10)
-  const operand2 = randomNum(1, 10)
+  const operand1 = randomNum(1, 10);
+  const operand2 = randomNum(1, 10);
 
   const operator = ['+', '-', '*'];
-  const indexOper = randomNum(0, 2)
-
+  const indexOper = randomNum(0, 2);
 
   let answer = '';
 
-  switch(indexOper) {
+  switch (indexOper) {
     case 0:
       answer = `${operand1 + operand2}`;
       break;
@@ -26,6 +25,6 @@ const task = () => {
   }
 
   return [`${operand1} ${operator[indexOper]} ${operand2}`, answer];
-}
+};
 
-gameBody(description, task)
+gameBody(description, task);
