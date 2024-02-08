@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import gameBodyForPrime from '../src/gameBodyForPrime.js';
+import gameBody from '../src/gameBody.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
@@ -19,4 +19,4 @@ const primeGame = () => {
     return [q, a];
 };
 
-gameBodyForPrime(description, primeGame);
+gameBody(description, primeGame);
