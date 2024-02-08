@@ -19,7 +19,7 @@ const task = () => {
     case 1:
       answer = `${operand1 - operand2}`;
       break;
-    case 2:
+    default:
       answer = `${operand1 * operand2}`;
       break;
   }
